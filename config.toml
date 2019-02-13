@@ -1,0 +1,26 @@
+baseURL = "https://lxhan.github.io/"
+languageCode = "en-us"
+title = "Hi there"
+theme = "sam"
+pygmentsStyle = "fruity"
+pygmentsCodefences = true
+
+[params]
+    dateform = "Jan 02, 2006"
+    favicon = ""
+    homepage = "home"
+    galleryFolder = "images/"
+    clickablePhotos = false
+    footerText = "[Email](mailto:boshetoonmai@gmail.com) / [Github](https://github.com/lxhan) <br><br> made with hugo"
+
+[[params.mainMenu]]
+    link = "/about"
+    text = "hello, my name is alex"
+
+[[params.mainMenu]]
+    link = "/projects"
+    text = "projects"
+
+[[params.mainMenu]]
+    link = "/work"
+    text = "experience"

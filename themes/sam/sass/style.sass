@@ -1,0 +1,240 @@
+@import "vars"
+@import "mixins"
+
+*
+    margin: 0
+    padding: 0
+    -webkit-box-sizing: border-box
+    box-sizing: border-box
+
+html
+    background-color: $dark-grey
+    font-family: $font
+    font-size: 16px
+
+body
+    font-size: $body-size
+    font-family: $font
+    color: $body-text
+    line-height: 2rem
+    letter-spacing: 1.5px
+    text-shadow: none
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    opacity: 1
+
+h1,h2,h3
+    margin-bottom: 0.5em
+    text-align: center
+    font-family: 'Didact Gothic', sans-serif
+    opacity: 0.6
+
+li
+    opacity: 0.8
+    & a
+        opacity: 0.9
+
+ul
+    list-style-type: none
+
+p
+    display: inline
+    opacity: 0.8
+
+a
+    color: $links
+    text-decoration: none
+    border-bottom: 2px solid $links
+    +ease(0.5s)
+    &:hover
+        color: $links-hover
+        font-style: none
+    &:active
+        color: $links
+
+button
+    padding: 20px
+    border: 0px
+    border-radius: 5px
+    background: $white
+    &:hover
+        box-shadow: 5px 5px $black
+
+hr
+    +skinny-hr
+    opacity: 0.3
+
+.wrap
+    margin: 0 auto
+    margin-top: 6rem
+    width: 45%
+    @media screen and (max-width: 736px)
+        padding: 1rem
+        width: 100%
+
+.tag-container
+    display: flex
+    flex-direction: row
+    justify-content: flex-start
+    align-items: center
+
+.tag
+    background-color: transparent
+    position: relative
+    bottom: 0
+
+.section
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: flex-start
+
+.bottom-menu
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    padding-top: 3rem
+    text-align: center
+
+.footer
+    width: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    text-align: center
+    background-color: transparent
+    position: relative
+    bottom: 0
+    padding: 3rem 1rem
+    font-family: $font
+    font-size: 1rem
+    line-height: 1em
+    opacity: 0.8
+    a
+        border-bottom: none
+        display: contents
+
+@import "elements"
+
+// Helpers
+
+.go-left
+    justify-content: flex-start
+    align-items: flex-start
+
+.go-right
+    justify-content: flex-end
+    align-items: flex-end
+
+.go-center
+    justify-content: center
+    align-items: center
+
+
+// Gist
+
+body .gist
+  .highlight, .blob-wrapper, .gist-data, .gist-meta
+    background: #121212
+  .blob-num, .blob-code-inner, .highlight, .pl-enm, .pl-ko, .pl-mo, .pl-mp1 .pl-sf, .pl-ms, .pl-pdc1, .pl-scp, .pl-smc, .pl-som, .pl-va, .pl-vpf, .pl-vpu, .pl-mdr
+    color: #aab1bf
+  .pl-mb, .pl-pdb
+    font-weight: 700
+  .pl-c
+    color: #5b6270
+    font-style: italic
+    span
+      color: #5b6270
+      font-style: italic
+  .pl-pdc
+    color: #5b6270
+    font-style: italic
+  .pl-sr .pl-cce
+    color: #56b5c2
+    font-weight: 400
+  .pl-ef, .pl-en, .pl-enf, .pl-eoai, .pl-kos, .pl-mh .pl-pdh, .pl-mr
+    color: #61afef
+  .pl-ens, .pl-vi
+    color: #be5046
+  .pl-enti, .pl-mai .pl-sf, .pl-ml, .pl-sf
+    color: #56b5c2
+  .pl-sr
+    color: #56b5c2
+    .pl-sra
+      color: #56b5c2
+  .pl-src, .pl-st, .pl-vo
+    color: #56b5c2
+  .pl-eoi, .pl-mri, .pl-pds, .pl-pse .pl-s1, .pl-s, .pl-s1
+    color: #97c279
+  .pl-k, .pl-kolp, .pl-mc, .pl-pde
+    color: #c578dd
+  .pl-mi, .pl-pdi
+    color: #c578dd
+    font-style: italic
+  .pl-mp, .pl-stp
+    color: #818896
+  .pl-mdh, .pl-mdi, .pl-mdr
+    font-weight: 400
+  .pl-mdht, .pl-mi1
+    color: #97c279
+    background: #020
+  .pl-md, .pl-mdhf
+    color: #df6b75
+    background: #200
+  .pl-corl
+    color: #df6b75
+    text-decoration: underline
+  .pl-ib
+    background: #df6b75
+  .pl-ii
+    background: #e0c184
+    color: #fff
+  .pl-iu
+    background: #e05151
+  .pl-ms1
+    color: #aab1bf
+    background: #373b41
+  .pl-c1, .pl-cn, .pl-e, .pl-eoa
+    color: #d19965
+  .pl-eoac
+    color: #d19965
+    .pl-pde
+      color: #d19965
+  .pl-kou, .pl-mm, .pl-mp .pl-s3, .pl-mq, .pl-s3, .pl-sok, .pl-sv, .pl-mb
+    color: #d19965
+  .pl-enc, .pl-entc, .pl-pse .pl-s2, .pl-s2, .pl-sc, .pl-smp, .pl-sr .pl-sre, .pl-stj, .pl-v, .pl-pdb
+    color: #e4bf7a
+  .pl-ent, .pl-entl, .pl-entm, .pl-mh, .pl-pdv, .pl-smi, .pl-sol, .pl-mdh, .pl-mdi
+    color: #df6b75
+
+html 
+  scrollbar-face-color: #646464
+  scrollbar-base-color: #646464
+  scrollbar-3dlight-color: #646464
+  scrollbar-highlight-color: #646464
+  scrollbar-track-color: #000
+  scrollbar-arrow-color: #000
+  scrollbar-shadow-color: #646464
+  scrollbar-dark-shadow-color: #646464
+
+
+::-webkit-scrollbar
+    width: 8px
+    height: 10px
+::-webkit-scrollbar-button
+    background-color: #666
+::-webkit-scrollbar-track
+    background-color: #646464
+::-webkit-scrollbar-track-piece
+    background-color: #000
+::-webkit-scrollbar-thumb
+    height: 50px
+    background-color: #666
+    border-radius: 10px
+::-webkit-scrollbar-corner
+    background-color: #646464
+::-webkit-resizer
+    background-color: #666

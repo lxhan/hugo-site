@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {{ partial "head.html" . }}
+        <title>{{ .Title }}</title>
+    </head>
+    <body>
+        <div class="section" id="splash">
+
+            {{ if .Site.Params.mainMenu }}
+                {{ range .Site.Params.mainMenu }}
+                    <div class="big-link">
+                        <a href="{{.link}}">
+                            <span class="big-link-text">
+                                {{.text}}
+                            </span>
+                        </a>
+                    </div>
+                {{ end }}
+
+            {{ else }}
+                {{ range .Site.Sections }}
+                    <div class="big-link"> 
+                        <a href="{{.Permalink}}">
+                            <span class="big-link-text">
+                                {{.Title}}
+                            </span>
+                        </a>
+                    </div>
+                {{ end }}
+            {{ end }}
+            
+        </div>
+        <script>
+            window.baffle('.big-link-text').reveal(1000);
+        </script>
+    </body>
+</html>
