@@ -42,4 +42,4 @@ git add .
 git commit -m "$MSG"
 git push
 
-echo -e "${GREEN}${UNDERLINE}Deployment finished"
+echo -e "${GREEN}${UNDERLINE}Deployment finished${DEFAULT}"
