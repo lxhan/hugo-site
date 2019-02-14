@@ -4,7 +4,8 @@
 RED="\033[0;31m"
 GREEN="\033[0;32m"
 YELLOW="\033[1;33m"
-NOCOLOR="\033[0m"
+BOLD="\033[1m"
+DEFAULT="\033[0m"
 
 echo -e "${YELLOW}Commit message: ${NOCOLOR}"
 read MSG
@@ -24,7 +25,7 @@ if [ ! -d "public" ]; then
     git clone git@github.com:lxhan/lxhan.github.io.git .
 elif [ -d "public" ]; then
     cd public && git pull
-    echo -e "${YELLOW}Changed directory to ${NOCOLOR} $(pwd)"
+    echo -e "${YELLOW}Changed directory to ${BOLD} $(pwd)"
     git add . && git commit -m "$MSG" && git push
 else
     echo -e "${RED}Something wrong with the tree structure"
@@ -32,7 +33,7 @@ else
 fi
 
 cd ../site
-echo -e "${YELLOW}Changed directory to ${NOCOLOR} $(pwd)"
+echo -e "${YELLOW}Changed directory to ${BOLD} $(pwd)"
 
 # Push to hugo site
 git add .
