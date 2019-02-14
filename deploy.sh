@@ -17,18 +17,16 @@ if [ ! -d "public" ]; then
     mkdir public && cd public
     git clone git@github.com:lxhan/lxhan.github.io.git .
 elif [ -d "public" ]; then
-    echo "Changed directory to public"
     cd public && git pull
+    echo "Changed directory to $(pwd)"
+    git add . && git commit -m "$MSG" && git push
 else
     echo "Something wrong with the tree structure"
     return
 fi
 
-# Push to lxhan.github.io
-git add .
-git commit -m "$MSG"
-git push
 cd ../site
+echo "Changed directory to $(pwd)"
 
 # Push to hugo site
 git add .
