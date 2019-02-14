@@ -8,7 +8,7 @@ publishDir = "../public"
 
 [params]
     dateform = "Jan 02, 2006"
-    favicon = ""
+    favicon = "boshetoonmai.ico"
     homepage = "home"
     galleryFolder = "images/"
     clickablePhotos = false
