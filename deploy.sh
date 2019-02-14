@@ -7,7 +7,7 @@ YELLOW="\033[1;33m"
 BOLD="\033[1m"
 DEFAULT="\033[0m"
 
-echo -e "${YELLOW}Commit message: ${NOCOLOR}"
+echo -e "${YELLOW}Commit message: ${DEFAULT}"
 read MSG
 
 # Check if message is not empty
@@ -20,12 +20,12 @@ hugo && cd ..
 
 # Check if there is public folder
 if [ ! -d "public" ]; then
-    echo -e "${YELLOW}There is no public folder, trying to recreate..."
+    echo -e "${YELLOW}There is no public folder, trying to recreate...${DEFAULT}"
     mkdir public && cd public
     git clone git@github.com:lxhan/lxhan.github.io.git .
 elif [ -d "public" ]; then
     cd public && git pull
-    echo -e "${YELLOW}Changed directory to ${BOLD} $(pwd)"
+    echo -e "${YELLOW}Changed directory to ${BOLD} $(pwd)${DEFAULT}"
     git add . && git commit -m "$MSG" && git push
 else
     echo -e "${RED}Something wrong with the tree structure"
@@ -33,7 +33,7 @@ else
 fi
 
 cd ../site
-echo -e "${YELLOW}Changed directory to ${BOLD} $(pwd)"
+echo -e "${YELLOW}Changed directory to ${BOLD} $(pwd)${DEFAULT}"
 
 # Push to hugo site
 git add .
