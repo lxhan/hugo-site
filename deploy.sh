@@ -17,6 +17,7 @@ if [ ! -d "public" ]; then
     mkdir public && cd public
     git clone git@github.com:lxhan/lxhan.github.io.git .
 elif [ -d "public" ]; then
+    echo "Changed directory to public"
     cd public && git pull
 else
     echo "Something wrong with the tree structure"
