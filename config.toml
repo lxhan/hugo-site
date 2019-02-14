@@ -4,6 +4,7 @@ title = "Hi there"
 theme = "sam"
 pygmentsStyle = "fruity"
 pygmentsCodefences = true
+publishDir = "../public"
 
 [params]
     dateform = "Jan 02, 2006"

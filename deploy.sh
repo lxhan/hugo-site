@@ -1,19 +1,37 @@
 #!/bin/bash
 
-echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
+echo "Commit message:"
+read MSG
 
-hugo -t sam 
-
-cd public
-
-git add .
-
-msg="rebuilding site `date`"
-if [ $# -eq 1 ]
-  then msg="$1"
+# Check if message is not empty
+if [ -z "$MSG" ]; then
+    echo "Commit message is required!"
+    return
 fi
-git commit -m "$msg"
 
-git push origin master
+hugo && cd ..
 
-cd ..
+# Check if there is public folder
+if [ ! -d "public" ]; then
+    echo "There is no public folder, trying to recreate..."
+    mkdir public && cd public
+    git clone git@github.com:lxhan/lxhan.github.io.git .
+elif [ -d "public" ]; then
+    cd public && git pull
+else
+    echo "Something wrong with the tree structure"
+    return
+fi
+
+# Push to lxhan.github.io
+git add .
+git commit -m "$MSG"
+git push
+cd ../site
+
+# Push to hugo site
+git add .
+git commit -m "$MSG"
+git push
+
+echo "Deployment finished"
