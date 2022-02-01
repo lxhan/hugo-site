@@ -17,7 +17,7 @@
     "autoprefixer": "^9.1.2",
     "chokidar-cli": "^1.2.0",
     "node-sass": "^4.13.1",
-    "postcss": "^8.2.10",
+    "postcss": "^8.2.13",
     "postcss-cli": "^6.0.0",
     "lodash": "^4.17.21"
   }
